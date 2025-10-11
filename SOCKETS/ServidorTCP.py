@@ -23,5 +23,11 @@ print("Endereço do clinte: ", address)
 mensagem = conn.recv(1024)
 print("Mensagem recebida: ", mensagem.decode())
 
+#A função sendall envia mensagem para o cliente
+conn.sendall("Mensagem recebida com sucesso".encode())
 
-conn.sendall("Mensagem recebida com sucesso")
+#Fecha a conexão com o cliente
+conn.close()
+
+#Encerra oserviço do servidor
+servidor.close()
